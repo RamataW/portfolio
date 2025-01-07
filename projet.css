@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e0aaff, #9d4edd); /* Gradient dans les tons rosés/violets */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Section Header */
+header {
+    position: relative;
+    height: 100vh; /* Occupe toute la hauteur de l'écran */
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 10% 20px; /* Ajoute du padding pour l'espacement du texte */
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.project-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Pour inverser l'ordre à chaque scroll */
+.project-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    width: 50%;
+    text-align: center;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.project-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.project-video video {
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce autour de la vidéo */
+    transition: transform 0.3s ease-in-out; /* Animation lors de l'interaction */
+}
+
+.project-video video:hover {
+    transform: scale(1.05); /* Légère augmentation de taille lors du survol */
+}
+
+
+.project-content {
+    width: 50%;
+    text-align: left;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-content p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-content a {
+    font-weight: bold;
+    color: #EE2677;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-content a:hover {
+    color: #8847a6; /* Violet doux */
+}
+
+/* Animation lors du défilement pour inverser les positions */
+.project-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
+.project-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Section Miss Sénégal France */
+.miss-senegal-france {
+    display: flex;
+    align-items: center;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+}
+
+.miss-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.miss-logo {
+    width: 600px;
+    height: auto;
+    margin-right: 2rem;
+}
+
+.miss-description h2 {
+    font-size: 2rem;
+    color: #6c4f9c;
+    margin-bottom: 1rem;
+}
+
+.miss-description p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Section des vidéos */
+.scroll-section {
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.scroll-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #6c4f9c;
+}
+
+.scroll-content .description {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.video-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.video-container {
+    flex: 1;
+    max-width: 320px;  /* Limite la largeur à 320px pour chaque vidéo */
+    margin-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    width: 100%;
+}
+
+.video-wrapper {
+    width: 100%;
+    height: 600px; /* Hauteur pour simuler le format portrait */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.video-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Animation lors du défilement */
+.show-on-scroll {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .miss-logo {
+        width: 120px;
+    }
+}
+
+
+
+
+.bottom-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+.bottom-nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px; /* Équilibrer le padding */
+    border-radius: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.bottom-nav a:hover {
+    background: #d48ec9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
